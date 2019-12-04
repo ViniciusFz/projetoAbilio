@@ -17,10 +17,7 @@ module.exports = {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {
-            model: {
-              tableName: 'users',
-              schema: 'schema'
-            },
+            model:  'users',
             key: 'id'
           },
           onUpdate: 'CASCADE',
@@ -31,10 +28,7 @@ module.exports = {
           type: Sequelize.INTEGER,
           allowNull: false,
           references: {
-            model: {
-              tableName: 'student',
-              schema: 'schema'
-            },
+            model:'students',
             key: 'id', 
           },
           onUpdate: 'CASCADE',
@@ -56,6 +50,6 @@ module.exports = {
 
 
   down: (queryInterface, Sequelize) => {
-      return queryInterface.dropTable('users');
+      return queryInterface.dropTable('ocurrency');
   }
 };
